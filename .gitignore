@@ -18,8 +18,11 @@
 *.zip
 *.tar.gz
 *.rar
+.idea/
+src/main/java/.idea/
+src/main/java/out/
+
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
-Sword_Pointing_to_Offer_2rd_version.pdf
