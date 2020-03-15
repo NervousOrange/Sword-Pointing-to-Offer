@@ -3,8 +3,6 @@
 也不知道每个数字重复几次。请找出数组中任意一个重复的数字。
 例如，如果输入长度为7的数组{2,3,1,0,2,5,3}，那么对应的输出是第一个重复的数字2。
 */
-
-
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -35,7 +33,7 @@ public class Duplicate_Number_in_Array {
 
     /* 排序后检查相邻数字是否相等，空间复杂度 0，时间复杂度 O(nlogn)*/
     public boolean duplicate2(int numbers[],int length,int [] duplication) {
-        if (numbers == null | length == 0) {
+        if (numbers == null || length == 0) {
             return false;
         }
         Arrays.sort(numbers);
