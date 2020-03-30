@@ -3,38 +3,24 @@
 
 public class DuplicateInLinkedList {
     public static void main(String[] args) {
-        ListNode2 node0 = new ListNode2(1);
-        ListNode2 node1 = node0.next = new ListNode2(2);
-        ListNode2 node2 = node1.next = new ListNode2(3);
-        ListNode2 node3 = node2.next = new ListNode2(3);
-        ListNode2 node4 = node3.next = new ListNode2(4);
-        ListNode2 node5 = node4.next = new ListNode2(4);
-        ListNode2 node6 = node5.next = new ListNode2(5);
+        ListNode node0 = new ListNode(1);
+        ListNode node1 = node0.next = new ListNode(2);
+        ListNode node2 = node1.next = new ListNode(3);
+        ListNode node3 = node2.next = new ListNode(3);
+        ListNode node4 = node3.next = new ListNode(4);
+        ListNode node5 = node4.next = new ListNode(4);
+        ListNode node6 = node5.next = new ListNode(5);
 
-        DuplicateInLinkedList duplicateInLinkedList = new DuplicateInLinkedList();
-        ListNode2 resultNode = duplicateInLinkedList.deleteDuplication(node0);
-        while (resultNode.next != null) {
-            System.out.print(resultNode.val + " ");
-            resultNode = resultNode.next;
-        }
-        System.out.print(resultNode.val);
+        testDuplicateInLinkedList(node0);
 
         System.out.println();
         System.out.println("second test: ------------------");
         test();
     }
 
-    private static void test() {
-        ListNode2 node0 = new ListNode2(1);
-        ListNode2 node1 = node0.next = new ListNode2(1);
-        ListNode2 node2 = node1.next = new ListNode2(1);
-        ListNode2 node3 = node2.next = new ListNode2(1);
-        ListNode2 node4 = node3.next = new ListNode2(1);
-        ListNode2 node5 = node4.next = new ListNode2(1);
-        // ListNode2 node6 = node5.next = new ListNode2(2);
-
+    private static void testDuplicateInLinkedList(ListNode node0) {
         DuplicateInLinkedList duplicateInLinkedList = new DuplicateInLinkedList();
-        ListNode2 resultNode = duplicateInLinkedList.deleteDuplication(node0);
+        ListNode resultNode = duplicateInLinkedList.deleteDuplication(node0);
         if (resultNode != null) {
             while (resultNode.next != null) {
                 System.out.print(resultNode.val + " ");
@@ -44,14 +30,26 @@ public class DuplicateInLinkedList {
         }
     }
 
-    public ListNode2 deleteDuplication(ListNode2 pHead) {
+    private static void test() {
+        ListNode node0 = new ListNode(1);
+        ListNode node1 = node0.next = new ListNode(1);
+        ListNode node2 = node1.next = new ListNode(1);
+        ListNode node3 = node2.next = new ListNode(1);
+        ListNode node4 = node3.next = new ListNode(1);
+        ListNode node5 = node4.next = new ListNode(1);
+        // ListNode2 node6 = node5.next = new ListNode2(2);
+
+        testDuplicateInLinkedList(node0);
+    }
+
+    public ListNode deleteDuplication(ListNode pHead) {
         if (pHead == null || pHead.next == null) {
             return pHead;
         }
-        ListNode2 head = new ListNode2(0);
+        ListNode head = new ListNode(0);
         head.next = pHead;
-        ListNode2 pre = head;
-        ListNode2 last = head.next;
+        ListNode pre = head;
+        ListNode last = head.next;
         while (last != null) {
             if (last.next != null && last.val == last.next.val) {
                 while (last.next != null && last.val == last.next.val) {
@@ -68,11 +66,3 @@ public class DuplicateInLinkedList {
     }
 }
 
-class ListNode2 {
-    int val;
-    ListNode2 next = null;
-
-    ListNode2(int val) {
-        this.val = val;
-    }
-}

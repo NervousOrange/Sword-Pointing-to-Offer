@@ -6,17 +6,17 @@ public class PrintLinkListReversely {
 
     public static void main(String[] args) {
         PrintLinkListReversely printLinkListReversely = new PrintLinkListReversely();
-        ListNode3 node0 = new ListNode3(0);
-        ListNode3 node1 = node0.next = new ListNode3(1);
-        ListNode3 node2 = node1.next = new ListNode3(2);
-        ListNode3 node3 = node2.next = new ListNode3(3);
-        ListNode3 node4 = node3.next = new ListNode3(4);
-        ListNode3 node5 = node4.next = new ListNode3(5);
-        ListNode3 node6 = node5.next = new ListNode3(6);
+        ListNode node0 = new ListNode(0);
+        ListNode node1 = node0.next = new ListNode(1);
+        ListNode node2 = node1.next = new ListNode(2);
+        ListNode node3 = node2.next = new ListNode(3);
+        ListNode node4 = node3.next = new ListNode(4);
+        ListNode node5 = node4.next = new ListNode(5);
+        ListNode node6 = node5.next = new ListNode(6);
         System.out.println(printLinkListReversely.printListFromTailToHead(node0));
     }
 
-    public ArrayList<Integer> printListFromTailToHead(ListNode3 listNode) {
+    public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
         if (listNode == null) {
             return new ArrayList<>();
         }
@@ -35,10 +35,3 @@ public class PrintLinkListReversely {
 }
 
 
-class ListNode3 {
-    int val;
-    ListNode3 next = null;
-    ListNode3(int val) {
-        this.val = val;
-    }
-}
